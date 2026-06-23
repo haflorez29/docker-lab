@@ -128,7 +128,3 @@ It's a lab exercise from the course adapted for learning Docker Compose with Pos
 - docker compose files
 - networks
 - use name volumes
-
-## �📝 License
-
-This project is open source.
