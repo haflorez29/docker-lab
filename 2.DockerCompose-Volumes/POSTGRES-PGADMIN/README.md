@@ -2,7 +2,18 @@
 
 PostgreSQL database with PgAdmin graphical interface for management, running with Docker Compose.
 
-## 📋 Description
+## Project focus
+
+This folder is a Docker Compose exercise for volumes and database management. It shows how to run PostgreSQL and PgAdmin together with persistent storage.
+
+## What I learned
+
+- Use Docker Compose for database and admin UI orchestration
+- Keep PostgreSQL data with a persistent named volume
+- Connect PgAdmin to PostgreSQL through the Compose network
+- Stop and remove services and data with `docker-compose down -v`
+
+## Description
 
 This project provides:
 
@@ -11,14 +22,14 @@ This project provides:
 - **Persistent volumes** - Data is maintained between restarts
 - **Docker Compose** - Simple container orchestration
 
-## 🚀 Prerequisites
+## Prerequisites
 
 - **Docker** installed
 - **Docker Compose** installed (version 3 or higher)
 
-## 🐳 Quick Start
+## Quick Start
 
-### 1. Clone or download the project
+### 1. Enter the project folder
 
 ```bash
 cd POSTGRES-PGADMIN
@@ -36,7 +47,7 @@ docker-compose up -d
 docker-compose ps
 ```
 
-## 🔐 Credentials
+## Credentials
 
 ### PostgreSQL
 - **Host:** `postgres_database` (from other containers) or `localhost` (from your machine)
@@ -61,13 +72,13 @@ docker-compose ps
    - Password: `123456`
 4. Click "Save"
 
-## 🛑 Stop services
+## Stop services
 
 ```bash
 docker-compose down
 ```
 
-## 🗑️ Remove everything (including volumes)
+## Remove everything (including volumes)
 
 ```bash
 docker-compose down -v
@@ -75,50 +86,46 @@ docker-compose down -v
 
 **Warning:** This will delete the database data.
 
-## 📁 Estructura de Volúmenes
+## Volume structure
 
 ```
 POSTGRES-PGADMIN/
-├── postgres/                    # PostgreSQL
-│   └── (persistent data base create with for dev development with bind volumes)
-├── pgadmin/                     # Config PgAdmin
+├── postgres/                    # PostgreSQL data
+├── pgadmin/                     # PgAdmin config
 │   ├── azurecredentialcache/
 │   ├── sessions/
 │   └── storage/
-└── docker-compose.yml           # Config
+└── docker-compose.yml           # Compose config
 ```
 
-## 🔄 Restart Services 
+## Restart services
 
 ```bash
 docker-compose restart
 ```
 
-## 📊 logs
+## Logs
 
 ```bash
 docker-compose logs
 
-# PostgreSQL
 docker-compose logs postgres_database
-
-# PgAdmin
 docker-compose logs pgadmin_container
 
 docker-compose logs -f
 ```
 
-## 📚 References
+## References
 
 - [PostgreSQL Docs](https://www.postgresql.org/docs/)
 - [PgAdmin Docs](https://www.pgadmin.org/docs/)
 - [Docker Compose Docs](https://docs.docker.com/compose/)
 
-## � Course Reference
+## Course Reference
 
 This project was created following the course:
 
-**[Docker - Guía práctica de uso para desarrolladores](https://www.udemy.com/course/docker-kubernetes-curso-completo/)**
+**[Docker - Gu�a pr�ctica de uso para desarrolladores](https://www.udemy.com/course/docker-kubernetes-curso-completo/)**
 
 By **Fernando Herrera**
 
@@ -127,4 +134,4 @@ It's a lab exercise from the course adapted for learning Docker Compose with Pos
 ## Learnings
 - docker compose files
 - networks
-- use name volumes
+- use named volumes

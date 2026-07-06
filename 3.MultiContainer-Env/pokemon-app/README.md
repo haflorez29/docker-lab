@@ -1,8 +1,19 @@
 # Pokemon NestJS App with MongoDB
 
-Backend application to manage a Pokédex using **NestJS** and **MongoDB**. Includes MongoDB, Mongo Express (GUI), and the main application, all orchestrated with Docker Compose.
+Backend application to manage a Pok�dex using **NestJS** and **MongoDB**. Includes MongoDB, Mongo Express (GUI), and the main application, all orchestrated with Docker Compose.
 
-## 📋 Description
+## Project focus
+
+This folder is a multi-container Docker Compose exercise. It shows how to run the app, the MongoDB database, and Mongo Express together with persistent storage.
+
+## What I learned
+
+- Use Docker Compose to coordinate multiple services in one stack
+- Connect the app service to MongoDB and Mongo Express automatically
+- Use persistent volumes to keep MongoDB data
+- Create a shared Compose network for container communication
+
+## Description
 
 Complete stack that includes:
 
@@ -12,14 +23,14 @@ Complete stack that includes:
 - **Docker Compose** - Orchestration of all services
 - **MongoDB Authentication** - Database security
 
-## 🚀 Prerequisites
+## Prerequisites
 
 - **Docker** installed
 - **Docker Compose** installed (version 3 or higher)
 
-## 🐳 Quick Start
+## Quick Start
 
-### 1. Clone or download the project
+### 1. Enter the project folder
 
 ```bash
 cd pokemon-app
@@ -51,7 +62,16 @@ You should see three services:
 - `mongo-express` - Mongo Express (GUI)
 - `poke-app` - NestJS Application
 
-## 🔗 Access to Services
+## Commands used
+
+```bash
+cd pokemon-app
+docker-compose up -d
+docker-compose down
+docker-compose down -v
+```
+
+## Access to Services
 
 ### Pokemon Application (API)
 - **URL:** `http://localhost:3000`
@@ -61,7 +81,7 @@ You should see three services:
 - **Username:** `admin`
 - **Password:** `admin123`
 
-## 📊 Services
+## Services
 
 ### MongoDB
 - **Port:** 27017 (internal)
@@ -80,27 +100,28 @@ You should see three services:
 - **Image:** klerith/pokemon-nest-app:1.0.0
 - **DB Connection:** Uses container environment variables
 
-## 🛑 Stop services
+## Stop services
 
 ```bash
 docker-compose down
 ```
 
-## 🗑️ Remove everything (including volumes and data)
+## Remove everything (including volumes and data)
 
 ```bash
 docker-compose down -v
 ```
 
-## 📁 Structure
+## Structure
+
 ```
 pokemon-app/
-├── docker-compose.yml     # Services configuration
-├── .env                   # Environment variables
-└── README.md             # This file
++-- docker-compose.yml     # Services configuration
++-- .env                   # Environment variables
++-- README.md             # This file
 ```
 
-## 📊 View logs
+## View logs
 
 ```bash
 docker-compose logs
@@ -112,7 +133,7 @@ docker-compose logs mongo-express
 docker-compose logs -f
 ```
 
-## 🔍 Monitoring
+## Monitoring
 
 ### State in real time
 ```bash
@@ -124,7 +145,7 @@ docker-compose ps -a
 docker stats
 ```
 
-## 🔐 Environment Variables
+## Environment Variables
 
 Edit the `.env` file to customize:
 
@@ -136,7 +157,7 @@ MONGODB=mongodb://admin:admin123@pokemon_db:27017  # Connection string
 DB_NAME=pokemon_db                    # App database
 ```
 
-## 📚 References
+## References
 
 - [NestJS Documentation](https://docs.nestjs.com/)
 - [MongoDB Documentation](https://docs.mongodb.com/)
@@ -148,17 +169,17 @@ DB_NAME=pokemon_db                    # App database
 docker system prune
 ```
 
-## � Course Reference
+## Course Reference
 
 This project was created following the course:
 
-**[Docker - Guía práctica de uso para desarrolladores](https://www.udemy.com/course/docker-kubernetes-curso-completo/)**
+**[Docker - Gu�a pr�ctica de uso para desarrolladores](https://www.udemy.com/course/docker-kubernetes-curso-completo/)**
 
 By **Fernando Herrera**
 
 It's a lab exercise from the course adapted for learning Docker Compose orchestration with NestJS and MongoDB.
 
 ## Learnings
-- enviroments variables
+- environment variables
 - test mongo connections
 - volumes external:false, create a new volume

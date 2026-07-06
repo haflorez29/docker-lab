@@ -2,7 +2,7 @@
 
 Backend application built with **NestJS** and **GraphQL** to manage tasks (todos). Includes validations, typed DTOs, and a professional modular structure.
 
-## 📋 Description
+## Description
 
 Complete GraphQL API to manage a task list with the following features:
 
@@ -12,32 +12,44 @@ Complete GraphQL API to manage a task list with the following features:
 - **GraphQL Types** - Automatic type definitions
 - **Testing** - Configuration for unit and integration tests
 
-## 🚀 Prerequisites
+## Project focus
+
+This folder is a manual Docker practice exercise. It shows how to run the app in a container, mount source code, and access the GraphQL playground.
+
+## What I learned
+
+- Run a Docker container manually with `docker container run`
+- Mount the project folder into the container with `-v "$(pwd)":/app`
+- Expose the app port with `-p`
+- Stop and remove the container when finished
+- Access GraphQL at `http://localhost:3000/graphql`
+
+## Prerequisites
 
 - **Docker** installed
 - **Docker Compose** installed
 - **Node.js 18.x** (if running without Docker)
 - **npm** or **yarn** (if running without Docker)
 
-## 🐳 Running with Docker
+## Running with Docker
 
 ### 0. Create network and volume
 ```bash
-- docker network create xxx
-- docker network inspect xxxx
-- docker volume create volume-name
+docker network create nest-network
+docker network inspect nest-network
+docker volume create nest-volume
 ```
 
-### 1. Run the container manual execute
+### 1. Run the container manually
 
 ```bash
 docker container run \
---name nest-app \
--w /app \
--p 80:3000 \
--v "$(pwd)":/app \
-node:16-alpine3.16 \
-sh -c "yarn install && yarn start:dev"
+  --name nest-app \
+  -w /app \
+  -p 80:3000 \
+  -v "$(pwd)":/app \
+  node:16-alpine3.16 \
+  sh -c "yarn install && yarn start:dev"
 ```
 
 The server will be available at: `http://localhost:3000/graphql`
@@ -54,7 +66,7 @@ docker container stop nest-app
 docker container rm nest-app
 ```
 
-## 💻 Running without Docker (Local)
+## Running without Docker (Local)
 
 ### 1. Install dependencies
 
@@ -75,7 +87,7 @@ npm run build
 npm run start:prod
 ```
 
-## 🔗 Access to GraphQL Playground
+## Access to GraphQL Playground
 
 Once the application is running, access the GraphQL Playground at:
 
@@ -110,7 +122,7 @@ mutation {
 }
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 src/
@@ -135,35 +147,35 @@ src/
         └── aggregations.type.ts
 ```
 
-## 🧪 Testing
+## Testing
 
 ```bash
-# Pruebas unitarias
+# Unit tests
 npm run test
 
-# Modo watch
+# Watch mode
 npm run test:watch
 
-# Cobertura
+# Coverage
 npm run test:cov
 
-# Pruebas e2e
+# End-to-end tests
 npm run test:e2e
 ```
 
-## 🛠 Scripts Disponibles
+## Scripts Available
 
-| Script | Descripción |
+| Script | Description |
 |--------|-------------|
-| `npm run start` | Ejecutar aplicación |
-| `npm run start:dev` | Modo desarrollo con watch |
-| `npm run start:debug` | Modo debug |
-| `npm run start:prod` | Modo producción |
-| `npm run build` | Construir aplicación |
-| `npm run lint` | Ejecutar linter |
-| `npm run format` | Formatear código |
+| `npm run start` | Run application |
+| `npm run start:dev` | Development mode with watch |
+| `npm run start:debug` | Debug mode |
+| `npm run start:prod` | Production mode |
+| `npm run build` | Build application |
+| `npm run lint` | Run linter |
+| `npm run format` | Format code |
 
-## 📦 Main Dependencies
+## Main Dependencies
 
 - **@nestjs/core** - NestJS Framework
 - **@nestjs/graphql** - GraphQL Integration
@@ -172,11 +184,11 @@ npm run test:e2e
 - **class-validator** - DTO Validation
 - **class-transformer** - Data Transformation
 
-## � Course Reference
+## Course Reference
 
 This project was created following the course:
 
-**[Docker - Guía práctica de uso para desarrolladores](https://www.udemy.com/course/docker-kubernetes-curso-completo/)**
+**[Docker - Gu�a pr�ctica de uso para desarrolladores](https://www.udemy.com/course/docker-kubernetes-curso-completo/)**
 
 By **Fernando Herrera**
 
@@ -185,6 +197,6 @@ It's a lab exercise from the course adapted for learning Docker containerization
 ## Learning
 - docker run execution with volume
 
-## �📝 License
+## License
 
 MIT
