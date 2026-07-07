@@ -116,6 +116,14 @@ docker buildx use container-builder
 docker buildx build --platform linux/amd64,linux/arm64 -t heidyxp/cron-ticker:buildx --push .
 ```
 
+### 5. Stop Builx and back to default
+
+docker buildx use default
+
+### 6. Delete builder
+
+docker buildx rm container-builder
+
 ## Final note
 
 This project was practice to understand the full Docker flow: creating the app, preparing the image, testing locally, pushing to Docker Hub, and making versions for several architectures.

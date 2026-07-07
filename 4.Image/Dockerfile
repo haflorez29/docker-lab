@@ -14,4 +14,8 @@ COPY . .
 
 RUN npm run test
 
+RUN rm -rf test && -rf node_modules
+
+RUN npm install --prod
+
 CMD ["npm", "start"]

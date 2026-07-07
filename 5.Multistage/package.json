@@ -1,0 +1,18 @@
+{
+  "name": "cron-ticker",
+  "version": "1.0.0",
+  "description": "npm i\r add app.js",
+  "license": "ISC",
+  "author": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "node-cron": "^4.5.0"
+  },
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
+}
