@@ -24,7 +24,7 @@ export class SeedService {
 
     await this.insertNewProducts( adminUser );
 
-    return 'SEED EXECUTED';
+    return 'SEED UTED!6';
   }
 
   private async deleteTables() {

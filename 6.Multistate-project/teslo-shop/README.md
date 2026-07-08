@@ -31,4 +31,8 @@ Docker exercise notes
 
 pryecto precreado clonado
 seguir el readme
+agregar un dev en el dockerfile
+docker compose build
+docker container run
+
 
