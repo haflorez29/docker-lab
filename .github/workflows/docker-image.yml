@@ -26,6 +26,20 @@ jobs:
         echo "Iniciando login"
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         echo "Fin del login"
+    - name: Docker build
+      env:
+        DOCKER_USER: ${{ secrets.DOCKER_USER }}
+      run: |
+        echo "Iniciando build"
+        docker build -t $DOCKER_USER/docker-graphql:0.0.1 ./7.GithubActionDeployment/graphql-actions/
+        echo "Fin del build"
+    - name: Docker push
+      env:
+        DOCKER_USER: ${{ secrets.DOCKER_USER }}
+      run: |
+        echo "Iniciando push"
+        docker push $DOCKER_USER/docker-graphql:0.0.1
+        echo "Fin del push"
       
 #    - name: Build the Docker image
 #      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
