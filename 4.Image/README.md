@@ -124,6 +124,12 @@ docker buildx use default
 
 docker buildx rm container-builder
 
+### 7. Logout in to Docker Hub
+
+```bash
+docker logout
+```
+
 ## Final note
 
 This project was practice to understand the full Docker flow: creating the app, preparing the image, testing locally, pushing to Docker Hub, and making versions for several architectures.
